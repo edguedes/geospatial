@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -21,11 +22,17 @@ public class PersonResponseDto {
     @JsonProperty("nome")
     private String name;
 
-    @JsonProperty("dataNascimento")
+    @JsonProperty("data de Nascimento")
     private LocalDate dtBirth;
 
-    @JsonProperty("dataAdmissao")
+    @JsonProperty("data de Admissão")
     private LocalDate dtAdmission;
+
+    @JsonProperty("data Atual")
+    private LocalDate dtNow;
+
+    @JsonProperty("salario")
+    private BigDecimal salary;
 
     public static PersonResponseDto toDto(Person entity) {
         if (entity == null) return null;
@@ -34,7 +41,9 @@ public class PersonResponseDto {
                 .id(entity.getId())
                 .name(entity.getName())
                 .dtBirth(entity.getDtBirth())
-                .dtAdmission(entity.getDtAdmission() != null ? entity.getDtAdmission().toLocalDate() : null)
+                .dtAdmission(entity.getDtAdmission())
+                .dtNow(LocalDate.now())
+                .salary(entity.getSalary())
                 .build();
     }
 }

@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "acdffee2-00e3-4d8a-8b91-51a3223da8a7",
+		"name": "Person Salary API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5719449",
+		"_collection_link": "https://edsouzaguedes.postman.co/workspace/Team-Workspace~e5279405-65fd-48fb-84c3-c0461b2d59e6/collection/5719449-acdffee2-00e3-4d8a-8b91-51a3223da8a7?action=share&source=collection_link&creator=5719449"
+	},
+	"item": [
+		{
+			"name": "Get Full Salary (R$)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/1/salary?output=full",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"1",
+						"salary"
+					],
+					"query": [
+						{
+							"key": "output",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Salary in Minimum Wage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/1/salary?output=min",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"1",
+						"salary"
+					],
+					"query": [
+						{
+							"key": "output",
+							"value": "min"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Error - Invalid Output Format",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/1/salary?output=invalid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"1",
+						"salary"
+					],
+					"query": [
+						{
+							"key": "output",
+							"value": "invalid"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Error - Person Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/999/salary?output=full",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"999",
+						"salary"
+					],
+					"query": [
+						{
+							"key": "output",
+							"value": "full"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

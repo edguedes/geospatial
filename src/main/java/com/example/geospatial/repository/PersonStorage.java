@@ -22,10 +22,6 @@ public class PersonStorage {
             throw new IllegalArgumentException("There is already a person with that ID.");
         }
 
-        if (person.getDtAdmission() == null) {
-            person.prePersist();
-        }
-
         personMap.put(personId, person);
         return person;
     }
@@ -53,7 +49,6 @@ public class PersonStorage {
     public synchronized Person updateName(Integer id, String newName) {
         Person person = findById(id);
         person.setName(newName);
-
         return person;
     }
 

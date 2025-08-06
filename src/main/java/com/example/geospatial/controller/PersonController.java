@@ -60,4 +60,17 @@ public class PersonController {
         return ResponseEntity.ok(dto);
     }
 
+    @GetMapping("/{id}/salary")
+    public ResponseEntity<String> getSalary(
+            @PathVariable Integer id,
+            @RequestParam String output) {
+        return ResponseEntity.ok(processService.getSalaryByFormat(id, output));
+    }
+
+    @GetMapping("/salary/updateAll")
+    public ResponseEntity<Void> updateAllSalaries() {
+        processService.updateAllSalaries();
+        return ResponseEntity.noContent().build();
+    }
+
 }

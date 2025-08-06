@@ -13,4 +13,6 @@ public interface ProcessService {
     PersonResponseDto update(Integer id, PersonRequestDto dto);
     PersonResponseDto updateName(Integer id, String newName);
     PersonResponseDto findById(Integer id);
+    String getSalaryByFormat(Integer id, String output);
+    void updateAllSalaries();
 }
